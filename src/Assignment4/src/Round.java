@@ -31,9 +31,11 @@ public class Round {
 		}
 		else {
 		    punter.loseBet();
+                   
 		}
 		
-        return winnings;		
+        return winnings;
+         
 	}
 	
 }

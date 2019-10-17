@@ -71,7 +71,7 @@ public class Punter {
 		    throw new IllegalArgumentException("Placing bet would go below limit.");
 		}
         if (state.equals(State.NOT_BETTING)) {
-            balance = balance - bet;
+        //  balance = balance - bet;
             currentBet = bet;
             state = State.BETTING;
         }
@@ -81,9 +81,13 @@ public class Punter {
 	
     public void returnBet() {
         if (state.equals(State.BETTING)) {
-            balance = balance + currentBet;
-            currentBet = 0;
-            state = State.NOT_BETTING;
+
+        balance = balance + currentBet;
+           
+         
+          currentBet = 0;
+           state = State.NOT_BETTING;
+         
         }
     }
 
@@ -93,7 +97,8 @@ public class Punter {
             if (winnings < 0) {
                 throw new IllegalArgumentException("Winnings cannot be negative.");
             }       
-            balance = balance + winnings;
+         balance = balance + winnings;
+         
             state = State.NOT_BETTING;
         }
 	}
@@ -101,7 +106,7 @@ public class Punter {
 	
     public void loseBet() {
         if (state.equals(State.BETTING)) {
-//           balance = balance - currentBet;
+       balance = balance - currentBet;
             currentBet = 0;
             state = State.NOT_BETTING;
         }

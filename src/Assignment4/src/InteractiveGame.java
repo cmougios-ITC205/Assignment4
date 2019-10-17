@@ -67,14 +67,17 @@ public class InteractiveGame {
                         punter.getName(), bet, pick, punter.getBalance()));
             
             int winnings = Round.play(punter, dice, pick, bet);
-            roundCount++;
+             roundCount++;
+            
             
             System.out.println(String.format("\nRolled %s, %s, %s", 
                         dice.get(0).getFace(), dice.get(1).getFace(), dice.get(2).getFace()));
             
             if (winnings > 0) {
                 System.out.println(String.format("\n%s won %d, balance now %d\n\n",
-                        punter.getName(), winnings, punter.getBalance()));
+                      //  punter.getName(), winnings, punter.getBalance()));
+                punter.getName(), winnings, punter.getBalance() ) );
+                
             }
             else {
                 System.out.println(String.format("\n%s lost %d, balance now %d\n\n",
@@ -82,6 +85,7 @@ public class InteractiveGame {
             }
             
             System.out.println("\nPlay again (Y/N)? (default: Y) ");
+
             ans = console.nextLine();
             if (ans.equalsIgnoreCase("N")) {
                 stop = true;
