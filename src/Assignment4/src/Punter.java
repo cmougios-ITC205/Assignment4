@@ -106,7 +106,7 @@ public class Punter {
 	
     public void loseBet() {
         if (state.equals(State.BETTING)) {
-       balance = balance - currentBet;
+        balance = balance - currentBet;
             currentBet = 0;
             state = State.NOT_BETTING;
         }
